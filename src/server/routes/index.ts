@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { StatusCodes } from 'http-status-codes'
+import { StatusCodes } from "http-status-codes";
 
 const router = Router();
 
 //Para que todas as rotas definidas em routes.ts sejam acessíveis a partir do caminho raiz "/",
-//é precisa passar "/" como o primeiro argumento para server.use():
+//é preciso passar "/" como o primeiro argumento para server.use():
 router.get("/", (req, res) => {
   return res.send("Olá dev");
 });
@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 router.post("/teste", (req, res) => {
   console.log(req.body);
 
-  return res.status(StatusCodes.).json(req.body);
+  return res.status(StatusCodes.ACCEPTED).json(req.body);
 });
 
 export { router };
