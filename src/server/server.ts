@@ -9,6 +9,8 @@ const server = express();
 // Usando um middleware para poder acessar a solicitação do usuário dentro da rota
 server.use(express.json());
 
+//Para que todas as rotas definidas em routes.ts sejam acessíveis a partir do caminho raiz "/",
+//é preciso passar "/" como o primeiro argumento para server.use():
 server.use("/", router);
 
 // Exportando o servidor para uso em outros arquivos
